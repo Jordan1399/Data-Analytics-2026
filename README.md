@@ -1,28 +1,38 @@
-# Tableau Practice — Superstore Dataset
-
+# Data Analytics Course — Practice Log
+ 
+## About
+Practice files from my data analytics course, plus related self-practice, covering SQL fundamentals, dashboard building, and Tableau. Primary dataset used in the SQL/dashboard sessions: [Indian Food 101 dataset (Kaggle)](https://www.kaggle.com/datasets/nehaprabhavalkar/indian-food-101). Tableau practice uses Tableau's built-in Sample - Superstore dataset.
+ 
+## Progress
+- [x] Tableau practice: Superstore dataset (self-practice, July 2026)
+- [x] Session 1: SQL basics + first dashboard
+- [ ] Session 2: TBD
+---
+ 
+## Tableau Practice — Superstore Dataset
+ 
 **Date:** 8 July 2026
 **Tool:** Tableau Public / Desktop
-**Dataset:** Sample - Superstore (built-in sample dataset)
-
-## What I practiced
-
-- **Geographic mapping**: plotted `SUM(Sales)` on a symbol map using `Longitude`/`Latitude` (generated), broken down by `Country/Region` and `State/Province`, both with a colour gradient and as a flat single-colour map.
-- **Time series analysis**: built line charts of `SUM(Sales)` over `Order Date`, drilling from year → quarter → month, to see trend granularity at different levels.
-- **Categorical comparison**: a bar chart comparing `SUM(Sales)` across `Region` (Central, East, West).
-
-## Screenshots
-
-| File | Description |
-|---|---|
-| `01-sales-map-usa-focus.png` | Sales map, colour-graduated by state, zoomed to continental US |
-| `02-sales-map-full-extent.png` | Same map, zoomed out to show full North America extent |
-| `03-sales-map-single-color.png` | Sales map with colour encoding removed, size-only |
-| `04-monthly-sales-trend-2023-2026.png` | Sales trend by year/quarter/month, full drill-down |
-| `05-quarterly-sales-trend.png` | Sales trend by year/quarter |
-| `06-yearly-sales-trend.png` | Sales trend by year only |
-| `07-sales-by-region-bar-chart.png` | Bar chart of total sales by region |
-
-## Notes to self
-
-- Practiced controlling the level of date granularity on the Columns shelf (Year → Quarter → Month) and seeing how it changes trend readability — monthly is noisy, yearly smooths it out too much, quarterly was the best balance for this dataset.
-- Removing a field from Colour is a quick way to check if it's actually adding insight or just visual noise.
+ 
+Self-directed practice exploring geographic mapping, time series drill-downs, and categorical comparisons using Tableau's built-in Superstore sample data.
+ 
+**Folder:** [`tableau/superstore-practice/`](tableau/superstore-practice/) — includes 7 annotated screenshots and its own README with details.
+ 
+---
+ 
+## Session 1 — SQL Basics & Dashboard Intro
+ 
+**Date:** 4 August 2026
+ 
+**What I covered:**
+- Basic `SELECT` statements and column selection
+- Filtering with `WHERE`, including compound conditions (`AND`, `OR`, `NOT IN`)
+- Pattern matching with `LIKE` (`%` wildcards)
+- Filtering with `IN` across multiple values
+- Combining several conditions in a single query
+**Files:**
+- [`sql/session-01-basic-queries.sql`](sql/session-01-basic-queries.sql) — all queries from today's practice
+- [`dashboards/session-01-indian-cuisine-dashboard.pdf`](dashboards/session-01-indian-cuisine-dashboard.pdf) — dashboard built with Bricks AI, summarizing the dataset (diet split, flavor profiles by course, regional prep/cook time patterns, top ingredients, and outlier dishes by prep time)
+**Notes to self:**
+- Missing values in this dataset are encoded as `-1` (not `NULL`) in columns like `state`, `region`, and `prep_time`/`cook_time` — need to filter these out before aggregating, or averages get skewed.
+- Dashboard insights worth remembering: vegetarian dishes dominate the dataset (~88.6%), so non-veg conclusions are based on a small sample; a few extreme prep-time outliers (500+ min) are likely data entry quirks rather than real durations.
