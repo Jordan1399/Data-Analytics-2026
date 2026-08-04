@@ -4,9 +4,27 @@
 Practice files from my data analytics course, plus related self-practice, covering SQL fundamentals, dashboard building, and Tableau. Primary dataset used in the SQL/dashboard sessions: [Indian Food 101 dataset (Kaggle)](https://www.kaggle.com/datasets/nehaprabhavalkar/indian-food-101). Tableau practice uses Tableau's built-in Sample - Superstore dataset.
  
 ## Progress
+- [x] Course introduction: WHERE, LIKE, and ORDER BY demo
 - [x] Tableau practice: Superstore dataset (self-practice, July 2026)
 - [x] Session 1: SQL basics + first dashboard
 - [ ] Session 2: TBD
+---
+ 
+## Course Introduction — WHERE, LIKE & ORDER BY Demo
+ 
+**Context:** Practice from a demo session during the course introduction period, before formal sessions began.
+ 
+**What I covered:**
+- Filtering with `WHERE` and `IN` across multiple conditions
+- Wildcard pattern matching with `LIKE` (`%` at the start, end, or both sides of a string)
+- The mandatory SQL clause execution order: `SELECT`, `FROM`, `WHERE`, `GROUP BY`, `HAVING`, `ORDER BY`, `LIMIT`, `OFFSET`
+- Sorting results with `ORDER BY` (`ASC`/`DESC`), including on numeric, text, and date columns
+- Combining `ORDER BY` with `LIMIT` to get top-N results
+**Files:**
+- [`sql/00-intro-where-like-orderby.sql`](sql/00-intro-where-like-orderby.sql)
+**Notes to self:**
+- `LIKE` wildcard placement matters: `"G%"` matches names *starting* with G, `"%M"` matches names *ending* with M, and `"%OO%"` matches names containing OO anywhere.
+- SQL clauses must follow their execution order or the query errors out — but not every clause is required in every query, only use what the problem calls for.
 ---
  
 ## Tableau Practice — Superstore Dataset
@@ -36,3 +54,4 @@ Self-directed practice exploring geographic mapping, time series drill-downs, an
 **Notes to self:**
 - Missing values in this dataset are encoded as `-1` (not `NULL`) in columns like `state`, `region`, and `prep_time`/`cook_time` — need to filter these out before aggregating, or averages get skewed.
 - Dashboard insights worth remembering: vegetarian dishes dominate the dataset (~88.6%), so non-veg conclusions are based on a small sample; a few extreme prep-time outliers (500+ min) are likely data entry quirks rather than real durations.
+ 
