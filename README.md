@@ -1,57 +1,42 @@
-# Data Analytics Course — Practice Log
- 
-## About
-Practice files from my data analytics course, plus related self-practice, covering SQL fundamentals, dashboard building, and Tableau. Primary dataset used in the SQL/dashboard sessions: [Indian Food 101 dataset (Kaggle)](https://www.kaggle.com/datasets/nehaprabhavalkar/indian-food-101). Tableau practice uses Tableau's built-in Sample - Superstore dataset.
- 
-## Progress
-- [x] Course introduction: WHERE, LIKE, and ORDER BY demo
-- [x] Tableau practice: Superstore dataset (self-practice, July 2026)
-- [x] Session 1: SQL basics + first dashboard
-- [ ] Session 2: TBD
+# SQL Practice — Data Analytics Course
+
+Practice exercises and class activities from my Data Analytics course, covering table creation, DDL/DML operations, constraints, and transaction control in MySQL.
+
+## Files
+
+| # | File | Topics Covered |
+|---|------|-----------------|
+| 01 | `01_Creating_Customers_Table.sql` | Creating a table, `INSERT`, `UPDATE` with `WHERE`, duplicate handling, `DELETE` vs `DROP` vs `TRUNCATE`, `ALTER TABLE ADD COLUMN`, `RENAME TABLE` |
+| 02 | `02_Renaming_Columns_Modifying_Table.sql` | `ALTER TABLE ... RENAME COLUMN`, `ALTER TABLE ... MODIFY COLUMN`, changing `CHAR` → `VARCHAR` and adjusting column length |
+| 03 | `03_Creating_Zipto_Orders_Table.sql` | Designing and populating a multi-column table (`Zipto_Orders`) from scratch |
+| 04 | `04_Constraints.sql` | `PRIMARY KEY`, `NOT NULL` constraints on a new table (`Joy_Orders`) |
+| 05 | `05_Students_Info_Table.sql` | `PRIMARY KEY`, `CHECK`, `UNIQUE`, `DEFAULT` constraints |
+| 06 | `06_Inserting_Data_Altering_Students_Table.sql` | Creating a database, `INSERT`, `ALTER TABLE ADD COLUMN`, renaming multiple columns, bulk `UPDATE`s to populate a `course_name` column |
+| 07 | `07_TCL_Transaction_Control_Language.sql` | `START TRANSACTION`, `COMMIT`, `ROLLBACK`, `SQL_SAFE_UPDATES`, and how autocommit behavior affects whether a rollback is possible |
+
+## Key concepts practiced
+
+**DDL (Data Definition Language)**
+- `CREATE TABLE`, `ALTER TABLE` (`ADD COLUMN`, `RENAME COLUMN`, `MODIFY COLUMN`), `RENAME TABLE`, `DROP`, `TRUNCATE`
+
+**DML (Data Manipulation Language)**
+- `INSERT`, `UPDATE` (with `WHERE`), `DELETE` (including using `LIMIT` to remove a single duplicate row)
+
+**Constraints**
+- `PRIMARY KEY`, `NOT NULL`, `UNIQUE`, `CHECK`, `DEFAULT`
+
+**TCL (Transaction Control Language)**
+- `START TRANSACTION`, `COMMIT`, `ROLLBACK`, `SAVEPOINT`
+- Understanding `AUTOCOMMIT` — MySQL commits by default unless a transaction is explicitly started, which affects whether `ROLLBACK` will actually work
+
+**ACID Properties**
+- Atomicity, Consistency, Isolation, Durability — the guarantees that make transactions safe
+
+## Notes
+
+- `DELETE` is recoverable via `ROLLBACK` (within a transaction); `TRUNCATE` and `DROP` are not.
+- `TRUNCATE` clears all rows but keeps the table structure; `DROP` removes the table structure entirely.
+- `SET SQL_SAFE_UPDATES = 0;` is needed before running `UPDATE`/`DELETE` without a key-based `WHERE` clause in MySQL Workbench's safe mode.
+
 ---
- 
-## Course Introduction — WHERE, LIKE & ORDER BY Demo
- 
-**Context:** Practice from a demo session during the course introduction period, before formal sessions began.
- 
-**What I covered:**
-- Filtering with `WHERE` and `IN` across multiple conditions
-- Wildcard pattern matching with `LIKE` (`%` at the start, end, or both sides of a string)
-- The mandatory SQL clause execution order: `SELECT`, `FROM`, `WHERE`, `GROUP BY`, `HAVING`, `ORDER BY`, `LIMIT`, `OFFSET`
-- Sorting results with `ORDER BY` (`ASC`/`DESC`), including on numeric, text, and date columns
-- Combining `ORDER BY` with `LIMIT` to get top-N results
-**Files:**
-- [`sql/00-intro-where-like-orderby.sql`](sql/00-intro-where-like-orderby.sql)
-**Notes to self:**
-- `LIKE` wildcard placement matters: `"G%"` matches names *starting* with G, `"%M"` matches names *ending* with M, and `"%OO%"` matches names containing OO anywhere.
-- SQL clauses must follow their execution order or the query errors out — but not every clause is required in every query, only use what the problem calls for.
----
- 
-## Tableau Practice — Superstore Dataset
- 
-**Date:** 8 July 2026
-**Tool:** Tableau Public / Desktop
- 
-Self-directed practice exploring geographic mapping, time series drill-downs, and categorical comparisons using Tableau's built-in Superstore sample data.
- 
-**Folder:** [`tableau/superstore-practice/`](tableau/superstore-practice/) — includes 7 annotated screenshots and its own README with details.
- 
----
- 
-## Session 1 — SQL Basics & Dashboard Intro
- 
-**Date:** 4 August 2026
- 
-**What I covered:**
-- Basic `SELECT` statements and column selection
-- Filtering with `WHERE`, including compound conditions (`AND`, `OR`, `NOT IN`)
-- Pattern matching with `LIKE` (`%` wildcards)
-- Filtering with `IN` across multiple values
-- Combining several conditions in a single query
-**Files:**
-- [`sql/session-01-basic-queries.sql`](sql/session-01-basic-queries.sql) — all queries from today's practice
-- [`dashboards/session-01-indian-cuisine-dashboard.pdf`](dashboards/session-01-indian-cuisine-dashboard.pdf) — dashboard built with Bricks AI, summarizing the dataset (diet split, flavor profiles by course, regional prep/cook time patterns, top ingredients, and outlier dishes by prep time)
-**Notes to self:**
-- Missing values in this dataset are encoded as `-1` (not `NULL`) in columns like `state`, `region`, and `prep_time`/`cook_time` — need to filter these out before aggregating, or averages get skewed.
-- Dashboard insights worth remembering: vegetarian dishes dominate the dataset (~88.6%), so non-veg conclusions are based on a small sample; a few extreme prep-time outliers (500+ min) are likely data entry quirks rather than real durations.
- 
+*Course: Data Analytics | Tool: MySQL Workbench*
