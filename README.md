@@ -1,6 +1,6 @@
 # SQL Practice — Data Analytics Course
 
-Practice exercises and class activities from my Data Analytics course, covering table creation, DDL/DML operations, constraints, and transaction control in MySQL.
+Practice exercises and class activities from the Data Analytics course I'm enrolled in, covering table creation, DDL/DML operations, constraints, and transaction control in MySQL.
 
 ## Files
 
