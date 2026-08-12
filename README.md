@@ -1,6 +1,6 @@
 # SQL Practice — Data Analytics Course
 
-Practice exercises and class activities from the Data Analytics course I'm enrolled in, covering table creation, DDL/DML operations, constraints, and transaction control in MySQL.
+Practice exercises and class activities from my Data Analytics course, covering table creation, DDL/DML operations, constraints, and transaction control in MySQL.
 
 ## Files
 
@@ -13,6 +13,7 @@ Practice exercises and class activities from the Data Analytics course I'm enrol
 | 05 | `05_Students_Info_Table.sql` | `PRIMARY KEY`, `CHECK`, `UNIQUE`, `DEFAULT` constraints |
 | 06 | `06_Inserting_Data_Altering_Students_Table.sql` | Creating a database, `INSERT`, `ALTER TABLE ADD COLUMN`, renaming multiple columns, bulk `UPDATE`s to populate a `course_name` column |
 | 07 | `07_TCL_Transaction_Control_Language.sql` | `START TRANSACTION`, `COMMIT`, `ROLLBACK`, `SQL_SAFE_UPDATES`, and how autocommit behavior affects whether a rollback is possible |
+| 08 | `08_DQL_Data_Query_Language.sql` | `SELECT` with `WHERE`, comparison operators, logical operators (`AND`, `OR`, `IN`, `NOT IN`, `BETWEEN`), filtering across single and multiple conditions on the `indian_food` dataset |
 
 ## Key concepts practiced
 
@@ -28,6 +29,14 @@ Practice exercises and class activities from the Data Analytics course I'm enrol
 **TCL (Transaction Control Language)**
 - `START TRANSACTION`, `COMMIT`, `ROLLBACK`, `SAVEPOINT`
 - Understanding `AUTOCOMMIT` — MySQL commits by default unless a transaction is explicitly started, which affects whether `ROLLBACK` will actually work
+
+**DQL (Data Query Language)**
+- `SELECT` — retrieving specific data from a table
+- `WHERE` — filtering rows based on conditions
+- Comparison operators: `<`, `>`, `<=`, `>=`, `<>`, `=`
+- Logical operators: `AND`, `OR`, `IN`, `NOT IN`, `BETWEEN`
+- Query execution order: `SELECT` → `FROM` → `WHERE` → `GROUP BY` → `HAVING` → `ORDER BY` → `LIMIT` → `OFFSET`
+- Combining multiple conditions to narrow results across several columns at once
 
 **ACID Properties**
 - Atomicity, Consistency, Isolation, Durability — the guarantees that make transactions safe
