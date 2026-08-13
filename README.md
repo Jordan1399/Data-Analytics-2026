@@ -14,6 +14,7 @@ Practice exercises and class activities from my Data Analytics course, covering 
 | 06 | `06_Inserting_Data_Altering_Students_Table.sql` | Creating a database, `INSERT`, `ALTER TABLE ADD COLUMN`, renaming multiple columns, bulk `UPDATE`s to populate a `course_name` column |
 | 07 | `07_TCL_Transaction_Control_Language.sql` | `START TRANSACTION`, `COMMIT`, `ROLLBACK`, `SQL_SAFE_UPDATES`, and how autocommit behavior affects whether a rollback is possible |
 | 08 | `08_DQL_Data_Query_Language.sql` | `SELECT` with `WHERE`, comparison operators, logical operators (`AND`, `OR`, `IN`, `NOT IN`, `BETWEEN`), filtering across single and multiple conditions on the `indian_food` dataset |
+| 09 | `09_Wildcards_CaseWhen_OrderBy_Limit_Offset.sql` | `LIKE` wildcard pattern matching, `CASE WHEN` conditional logic, `ORDER BY` (`ASC`/`DESC`), `LIMIT`, and `OFFSET` |
 
 ## Key concepts practiced
 
@@ -37,6 +38,18 @@ Practice exercises and class activities from my Data Analytics course, covering 
 - Logical operators: `AND`, `OR`, `IN`, `NOT IN`, `BETWEEN`
 - Query execution order: `SELECT` → `FROM` → `WHERE` → `GROUP BY` → `HAVING` → `ORDER BY` → `LIMIT` → `OFFSET`
 - Combining multiple conditions to narrow results across several columns at once
+
+**Wildcards & Pattern Matching**
+- `LIKE` with `%` wildcard — matching values that start with, end with, or contain a given pattern (e.g. `"b%"` for names starting with B, `"%i"` for names ending in I)
+
+**CASE WHEN (Conditional Logic)**
+- SQL's if/else equivalent — evaluates conditions in order and returns a label for the first match, with `ELSE` as a fallback
+- Used to categorize/bucket raw data (e.g. grouping `cook_time` into "instant", "moderate", "long_time") without needing a separate lookup table
+
+**Sorting & Pagination**
+- `ORDER BY` with `ASC` (default, low to high) or `DESC` (high to low)
+- `LIMIT` — restricting the number of rows returned (e.g. top 5 results)
+- `OFFSET` — skipping a number of rows before returning results (row counting starts at 0); requires `LIMIT` to be used alongside it
 
 **ACID Properties**
 - Atomicity, Consistency, Isolation, Durability — the guarantees that make transactions safe
