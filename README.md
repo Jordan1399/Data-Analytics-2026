@@ -1,4 +1,4 @@
-# SQL Practice — Data Analytics Course
+# SQL Practice — Data Analytics Essentials
 
 Practice exercises and class activities for Data Analytics, covering table creation, DDL/DML operations, constraints, and transaction control in MySQL.
 
