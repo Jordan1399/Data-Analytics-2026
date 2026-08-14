@@ -15,6 +15,7 @@ Practice exercises and class activities from my Data Analytics course, covering 
 | 07 | `07_TCL_Transaction_Control_Language.sql` | `START TRANSACTION`, `COMMIT`, `ROLLBACK`, `SQL_SAFE_UPDATES`, and how autocommit behavior affects whether a rollback is possible |
 | 08 | `08_DQL_Data_Query_Language.sql` | `SELECT` with `WHERE`, comparison operators, logical operators (`AND`, `OR`, `IN`, `NOT IN`, `BETWEEN`), filtering across single and multiple conditions on the `indian_food` dataset |
 | 09 | `09_Wildcards_CaseWhen_OrderBy_Limit_Offset.sql` | `LIKE` wildcard pattern matching, `CASE WHEN` conditional logic, `ORDER BY` (`ASC`/`DESC`), `LIMIT`, and `OFFSET` |
+| 10 | `10_Aggregate_Functions_GroupBy.sql` | Aggregate functions (`SUM`, `MIN`, `MAX`, `AVG`, `COUNT`), `DISTINCT`, `GROUP BY`, combining `GROUP BY` with `ORDER BY` and `LIMIT` |
 
 ## Key concepts practiced
 
@@ -50,6 +51,13 @@ Practice exercises and class activities from my Data Analytics course, covering 
 - `ORDER BY` with `ASC` (default, low to high) or `DESC` (high to low)
 - `LIMIT` — restricting the number of rows returned (e.g. top 5 results)
 - `OFFSET` — skipping a number of rows before returning results (row counting starts at 0); requires `LIMIT` to be used alongside it
+
+**Aggregate Functions & GROUP BY**
+- Aggregate functions (`SUM`, `MIN`, `MAX`, `AVG`, `COUNT`) collapse a column of values down to a single result (e.g. average cook time across all dishes)
+- `DISTINCT` — filters results down to unique values only
+- `GROUP BY` — groups rows that share a value so aggregate functions can be applied per group instead of across the whole table (e.g. dish count per diet type, or per state)
+- Aggregate functions can be used without `GROUP BY`, but `GROUP BY` requires an aggregate function alongside it
+- Combining `GROUP BY` with `ORDER BY` and `LIMIT` to answer questions like "top 3 states by dish count"
 
 **ACID Properties**
 - Atomicity, Consistency, Isolation, Durability — the guarantees that make transactions safe
