@@ -1,22 +1,32 @@
 # SQL Practice — Data Analytics Course
 
-Practice exercises and class activities from my Data Analytics course, covering table creation, DDL/DML operations, constraints, and transaction control in MySQL.
+Practice exercises and class activities from my Data Analytics course, covering table creation, DDL/DML operations, constraints, transaction control, querying, and data visualization in MySQL.
 
 ## Files
 
 | # | File | Topics Covered |
 |---|------|-----------------|
-| 01 | `01_Creating_Customers_Table.sql` | Creating a table, `INSERT`, `UPDATE` with `WHERE`, duplicate handling, `DELETE` vs `DROP` vs `TRUNCATE`, `ALTER TABLE ADD COLUMN`, `RENAME TABLE` |
-| 02 | `02_Renaming_Columns_Modifying_Table.sql` | `ALTER TABLE ... RENAME COLUMN`, `ALTER TABLE ... MODIFY COLUMN`, changing `CHAR` → `VARCHAR` and adjusting column length |
-| 03 | `03_Creating_Zipto_Orders_Table.sql` | Designing and populating a multi-column table (`Zipto_Orders`) from scratch |
-| 04 | `04_Constraints.sql` | `PRIMARY KEY`, `NOT NULL` constraints on a new table (`Joy_Orders`) |
-| 05 | `05_Students_Info_Table.sql` | `PRIMARY KEY`, `CHECK`, `UNIQUE`, `DEFAULT` constraints |
-| 06 | `06_Inserting_Data_Altering_Students_Table.sql` | Creating a database, `INSERT`, `ALTER TABLE ADD COLUMN`, renaming multiple columns, bulk `UPDATE`s to populate a `course_name` column |
-| 07 | `07_TCL_Transaction_Control_Language.sql` | `START TRANSACTION`, `COMMIT`, `ROLLBACK`, `SQL_SAFE_UPDATES`, and how autocommit behavior affects whether a rollback is possible |
-| 08 | `08_DQL_Data_Query_Language.sql` | `SELECT` with `WHERE`, comparison operators, logical operators (`AND`, `OR`, `IN`, `NOT IN`, `BETWEEN`), filtering across single and multiple conditions on the `indian_food` dataset |
-| 09 | `09_Wildcards_CaseWhen_OrderBy_Limit_Offset.sql` | `LIKE` wildcard pattern matching, `CASE WHEN` conditional logic, `ORDER BY` (`ASC`/`DESC`), `LIMIT`, and `OFFSET` |
-| 10 | `10_Aggregate_Functions_GroupBy.sql` | Aggregate functions (`SUM`, `MIN`, `MAX`, `AVG`, `COUNT`), `DISTINCT`, `GROUP BY`, combining `GROUP BY` with `ORDER BY` and `LIMIT` |
+| 08 | `08_Creating_Zipto_Orders_Table.sql` | Designing and populating a multi-column table (`Zipto_Orders`) from scratch |
+| 09 | `09_TCL_Transaction_Control_Language.sql` | `START TRANSACTION`, `COMMIT`, `ROLLBACK`, `SQL_SAFE_UPDATES`, and how autocommit behavior affects whether a rollback is possible |
+| 10 | `10_Inserting_Data_Altering_Students_Table.sql` | Creating a database, `INSERT`, `ALTER TABLE ADD COLUMN`, renaming multiple columns, bulk `UPDATE`s to populate a `course_name` column |
+| 11 | `11_Creating_Customers_Table.sql` | Creating a table, `INSERT`, `UPDATE` with `WHERE`, duplicate handling, `DELETE` vs `DROP` vs `TRUNCATE`, `ALTER TABLE ADD COLUMN`, `RENAME TABLE` |
+| 12 | `12_Constraints.sql` | `PRIMARY KEY`, `NOT NULL` constraints on a new table (`Joy_Orders`) |
+| 13 | `13_Renaming_Columns_Modifying_Table.sql` | `ALTER TABLE ... RENAME COLUMN`, `ALTER TABLE ... MODIFY COLUMN`, changing `CHAR` → `VARCHAR` and adjusting column length |
+| 14 | `14_Students_Info_Table.sql` | `PRIMARY KEY`, `CHECK`, `UNIQUE`, `DEFAULT` constraints |
+| 15 | `15_DQL_Data_Query_Language.sql` | `SELECT` with `WHERE`, comparison operators, logical operators (`AND`, `OR`, `IN`, `NOT IN`, `BETWEEN`), filtering across single and multiple conditions on the `indian_food` dataset |
+| 16 | `16_Wildcards_CaseWhen_OrderBy_Limit_Offset.sql` | `LIKE` wildcard pattern matching, `CASE WHEN` conditional logic, `ORDER BY` (`ASC`/`DESC`), `LIMIT`, and `OFFSET` |
+| 17 | `17_Aggregate_Functions_GroupBy.sql` | Aggregate functions (`SUM`, `MIN`, `MAX`, `AVG`, `COUNT`), `DISTINCT`, `GROUP BY`, combining `GROUP BY` with `ORDER BY` and `LIMIT` |
 | 18 | `18_Date_Functions_Null_Handling.sql` | Date functions (`YEAR()`, `MONTH()`, `DAY()`), handling `NULL` values with `IS NULL` / `IS NOT NULL`, replacing missing data with `IFNULL()` |
+| A | `A_sql:00-intro-where-like-orderby.sql` | Course intro/demo session: `WHERE` with `IN`, `LIKE` wildcard patterns (start/end/contains matching), `ORDER BY` (`ASC`/`DESC`), combining multiple filters, on the `indian_food` dataset |
+| B | `B_sql:session-01-basic-queries.sql` | Session 1 basics: `CREATE DATABASE`, `SELECT` (full table and specific columns), `WHERE`, `LIKE`, `IN`/`NOT IN`, combining conditions across `region`, `state`, `diet`, and `cook_time` |
+| C | `C_dashboards:session-01-indian-cuisine-dashboard.pdf` | Dashboard summarizing analysis of the `indian_food` dataset |
+
+## Data Visualizations
+
+A set of exported chart images (`01` through `07`) accompany the dashboard work, covering:
+- Sales by geography (USA-focused map, full-extent map, single-color map)
+- Sales trends over time (monthly 2023-2026, quarterly, yearly)
+- Sales by region (bar chart)
 
 ## Key concepts practiced
 
@@ -67,6 +77,10 @@ Practice exercises and class activities from my Data Analytics course, covering 
 
 **ACID Properties**
 - Atomicity, Consistency, Isolation, Durability — the guarantees that make transactions safe
+
+**Data Visualization & Dashboards**
+- Translating query results into geographic maps, time-series trend charts, and regional comparisons
+- Building a summary dashboard to communicate findings from the `indian_food` / sales datasets
 
 ## Notes
 
