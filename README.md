@@ -1,6 +1,6 @@
-# SQL Practice — Data Analytics Essentials
+# SQL Practice — Data Analytics Course
 
-Practice exercises and class activities for Data Analytics, covering table creation, DDL/DML operations, constraints, and transaction control in MySQL.
+Practice exercises and class activities from my Data Analytics course, covering table creation, DDL/DML operations, constraints, and transaction control in MySQL.
 
 ## Files
 
@@ -16,6 +16,7 @@ Practice exercises and class activities for Data Analytics, covering table creat
 | 08 | `08_DQL_Data_Query_Language.sql` | `SELECT` with `WHERE`, comparison operators, logical operators (`AND`, `OR`, `IN`, `NOT IN`, `BETWEEN`), filtering across single and multiple conditions on the `indian_food` dataset |
 | 09 | `09_Wildcards_CaseWhen_OrderBy_Limit_Offset.sql` | `LIKE` wildcard pattern matching, `CASE WHEN` conditional logic, `ORDER BY` (`ASC`/`DESC`), `LIMIT`, and `OFFSET` |
 | 10 | `10_Aggregate_Functions_GroupBy.sql` | Aggregate functions (`SUM`, `MIN`, `MAX`, `AVG`, `COUNT`), `DISTINCT`, `GROUP BY`, combining `GROUP BY` with `ORDER BY` and `LIMIT` |
+| 18 | `18_Date_Functions_Null_Handling.sql` | Date functions (`YEAR()`, `MONTH()`, `DAY()`), handling `NULL` values with `IS NULL` / `IS NOT NULL`, replacing missing data with `IFNULL()` |
 
 ## Key concepts practiced
 
@@ -58,6 +59,11 @@ Practice exercises and class activities for Data Analytics, covering table creat
 - `GROUP BY` — groups rows that share a value so aggregate functions can be applied per group instead of across the whole table (e.g. dish count per diet type, or per state)
 - Aggregate functions can be used without `GROUP BY`, but `GROUP BY` requires an aggregate function alongside it
 - Combining `GROUP BY` with `ORDER BY` and `LIMIT` to answer questions like "top 3 states by dish count"
+
+**Date Functions & NULL Handling**
+- `YEAR()`, `MONTH()`, `DAY()` — extracting specific parts of a date column into their own fields
+- `IS NULL` / `IS NOT NULL` — filtering rows based on whether a field has missing data
+- `IFNULL(column, replacement)` — substituting a default value (e.g. `0`, an average, or "unknown") in place of `NULL`, useful for cleaning data before analysis
 
 **ACID Properties**
 - Atomicity, Consistency, Isolation, Durability — the guarantees that make transactions safe
