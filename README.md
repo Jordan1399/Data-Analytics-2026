@@ -1,6 +1,6 @@
 # SQL Practice — Data Analytics Course
 
-Practice exercises and class activities from my Data Analytics course, covering table creation, DDL/DML operations, constraints, transaction control, querying, and data visualization in MySQL.
+Practice exercises and class activities from the Data Analytics course I'm currently surviving! This covers table creation, DDL/DML operations, constraints, transaction control, querying, and data visualization in MySQL.
 
 > **Note:** all files in this repo currently sit in the root directory (no subfolders). Links below point directly to filenames accordingly.
 
